@@ -35,7 +35,7 @@ string = 'http://thredds.ucar.edu/thredds/dodsC/station/metar/Surface_METAR_%Y%m
 string = datetime.strftime(dt, string)
 m = MetarMotherlode(string)
 
-sites = ['KPNC']
+sites = ['KPNC'] # This is the closest site to SGP, so you shouldn't have to change this
 # Other PECAN PISA sites and the METAR closest to them): 
 # - KHYS (Ellis, KS PISA)
 # - KDDC (Greensburg, KS PISA)
