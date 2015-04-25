@@ -1,13 +1,17 @@
 ## PECAN Scripts and Files
 
-This GIT respository contains various codes for generating plots 
-for the PECAN PISA network (will also contain reader for the PECAN PISA ensemble output, although those will 
-also be kept with SHARPpy.  This directory will also contain the configuration files for the PECAN SHARPpy
-distribution.  All these codes are contained and kept under revision control here for safe keeping and easy distribution.
+This GIT respository contains various codes for generating plots for the PECAN PISA network (will also contain reader for the PECAN PISA ensemble output, although those will also be kept with SHARPpy.  This directory will also contain the configuration files for the PECAN SHARPpy distribution.  All these codes are contained and kept under revision control here for safe keeping and easy distribution.
 
 Code distributions that should also be downloaded:
 
+- netCDF4-python
+- Numpy
+- IPython
+- matplotlib
 
+These all can be downloaded using the Anaconda Python Distribution:
+
+http://continuum.io/downloads
 
 Directories:
  - realtime_cbh: generates files for AERIoe to use 
