@@ -1,0 +1,9 @@
+prior_type = 3          ; 0 - sonde climatology, 1 - RUC/RAP, 2 - ARM RUC/RAP (for pre 2003 AERI stuff)
+prior_temporal = 3      ; Model run to use offset from the retrieval time (temporal window size)
+prior_spatial = 10      ; Number of grid points from center of spatial window to window boundaries
+prior_std_corr = 0      ; 0 - use raw model output for cov matrix,  1 - correct for underdispersed model profiles
+prior_sfc_std = 3       ; Inflation value for the surface level standard deviation
+prior_reg_hght = 3      ; Height in km where the prior standard deviation returns to the model standard deviation.
+prior_inf_type = 2      ; 0 - to apply inflation to T profile, 1 - the Q profile, 2 - both T/Q profiles
+model_prior_dir = /raid/FRDD/Dave.Turner/data/sgp/aeri/realtime_model_priors/ ; Path where the model prior data will be put
+arm_model_dir = /raid/FRDD/Dave.Turner/data/norman/rr/

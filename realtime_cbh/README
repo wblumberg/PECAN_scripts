@@ -8,7 +8,7 @@ They are also dependent on the following libaries:
 1.) netCDF4-python
 2.) Numpy
 
-These libaries can be downloaded by installing the Anaconda Python Distribution:
+These libaries can be downloaded by installing and using the Anaconda Python Distribution:
 
 http://continuum.io/downloads
 
