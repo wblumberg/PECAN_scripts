@@ -14,9 +14,9 @@ These all can be downloaded using the Anaconda Python Distribution:
 http://continuum.io/downloads
 
 Directories:
- - realtime_cbh: generates files for AERIoe to use 
- - plotting: scripts that generate convection indices time series for plotting
+ - realtime_cbh: generates cloud base height files in real-time for AERIoe to use 
+ - plotting: scripts that generate plots of the PISA data
  - model_prior: scripts that generate the AERI model priors
- - oe-indices: a directory that contains the OE-indices repository
+ - oe-indices: a directory that contains the code to calculate convection indicies on OE retrievals
  - sharppy: a directory that contains the SHARPpy config files and decoders for PECAN
 
