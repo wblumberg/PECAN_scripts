@@ -1,0 +1,6 @@
+[submodule "OE-Indices"]
+	path = OE-Indices
+	url = https://github.com/wblumberg/OE-Indices.git
+[submodule "model_prior"]
+	path = model_prior
+	url = https://github.com/wblumberg/aerioe_MP.git

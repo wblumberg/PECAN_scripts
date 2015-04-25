@@ -1,0 +1,14 @@
+This directory contains scripts that will pull realtime cloud base height data from
+ASOS/AWOS stations around the US for use in the AERIoe runs.
+
+The scripts are dependent upon the UCAR Motherlode server as their data source.
+
+They are also dependent on the following libaries:
+
+1.) netCDF4-python
+2.) Numpy
+
+These libaries can be downloaded by installing the Anaconda Python Distribution:
+
+http://continuum.io/downloads
+
