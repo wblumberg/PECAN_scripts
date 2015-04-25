@@ -4,3 +4,6 @@
 [submodule "model_prior"]
 	path = model_prior
 	url = https://github.com/wblumberg/aerioe_MP.git
+[submodule "MWRoe"]
+	path = MWRoe
+	url = https://github.com/wblumberg/MWRoe.git
