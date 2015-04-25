@@ -27,6 +27,9 @@ from metars_motherlode import MetarMotherlode
     looks for a file that contains the same YYYYMMDD as the YYYYMMDD that is being retrieved.
 """
 
+out_path = sys.argv[1]
+
+print "Loading recent METAR data in from the UCAR Motherlode..."
 dt = datetime.utcnow()
 string = 'http://thredds.ucar.edu/thredds/dodsC/station/metar/Surface_METAR_%Y%m%d_0000.nc'
 string = datetime.strftime(dt, string)
@@ -40,9 +43,20 @@ sites = ['KPNC']
 # - KGLD (Brewster, KS PISA)
 # - KHUT (Hesston, KS PISA)
 
-for site in sites:
-    stn_idx = np.where(site == m.stations)
+# To add others, make it look like this sites = ["KHYS", "KGLD"]
 
+for site in sites:
+    print "Finding data for this site: ", site
+    # Find the indices where the data corresponds to the sites requested
+    stn_idx = np.where(site == m.stations)
+    
+    if len(stn_idx[0]) == 0:
+        print "The station \"" + site + " was not found.  Try a different site."
+        continue
+    else:
+        print "Found data for this site."
+
+    # Get all of the times and the lowest cloud base heights for this station
     times = m.time_obs[stn_idx]
     cbh = m.getVariables('low_cloud_base_altitude')[0][stn_idx]
     lat = m.lat[stn_idx][0]
@@ -50,13 +64,15 @@ for site in sites:
     alt = m.alt[stn_idx][0] # meters
     name = m.name[stn_idx][0]
     state = m.states[stn_idx][0]
+
+    # Change the missing data to the QC flag of -9999
     cbh = np.where(np.asarray(cbh) > 0, cbh/1000., -9999)
 
     #utc = pytz.UTC
 
     #lead_str = site.lower() + 'ceilocbhC1.a1.' + datetime.strftime(times[0], '%Y%m%d.%H%M%S.cdf')
-    lead_str = site.lower() + 'ceilocbhC1.a1.' + datetime.strftime(dt, '%Y%m%d.000000.cdf')
-    print lead_str
+    lead_str = out_path + '/' + site.lower() + 'ceilocbhC1.a1.' + datetime.strftime(dt, '%Y%m%d.000000.cdf')
+    print 'Saving data for this site at: ', lead_str
     ncdf = Dataset(lead_str, 'w')
     ncdf.createDimension('time', len(times))
     ncdf.description = "This file contains the lowest cloud height at any time and is used in the AERIoe retrieval algorithm."

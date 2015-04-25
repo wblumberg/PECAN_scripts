@@ -12,3 +12,16 @@ These libaries can be downloaded by installing and using the Anaconda Python Dis
 
 http://continuum.io/downloads
 
+Once downloaded, the realtime_aerioe_cloud.py script can be run by typing:
+    
+    python realtime_aerioe_cloud.py <out_path>
+
+When this script runs, it will pull the latest world-wide METAR data and generate files
+for each site specified in the Python file.  The sites it should pull are listed in the
+"sites" variable.
+
+<out_path> is the command line argument that indicates the path the cloud base height
+netCDF files should be saved to.
+
+
+
