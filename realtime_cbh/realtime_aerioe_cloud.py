@@ -64,6 +64,7 @@ for site in sites:
     alt = m.alt[stn_idx][0] # meters
     name = m.name[stn_idx][0]
     state = m.states[stn_idx][0]
+    print "Found", len(times), " different observations for this site."
 
     # Change the missing data to the QC flag of -9999
     cbh = np.where(np.asarray(cbh) > 0, cbh/1000., -9999)
