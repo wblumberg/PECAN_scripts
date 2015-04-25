@@ -4,3 +4,6 @@
 [submodule "MWRoe"]
 	path = MWRoe
 	url = https://github.com/wblumberg/MWRoe.git
+[submodule "oe-indices"]
+	path = oe-indices
+	url = https://github.com/wblumberg/OE-Indices.git
