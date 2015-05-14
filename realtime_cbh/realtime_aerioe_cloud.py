@@ -84,9 +84,9 @@ for site in sites:
 
     nums = date2num(times, 'seconds since 1970-01-01 00:00:00-00:00')
     
-    bt = ncdf.createVariable('base_time', 'i8')
+    bt = ncdf.createVariable('base_time', 'i4')
     bt[:] = nums[0]
-    to = ncdf.createVariable('time_offset', 'f4', ('time',))
+    to = ncdf.createVariable('time_offset', 'i4', ('time',))
     to[:] = nums - nums[0]
 
     la = ncdf.createVariable('lat', 'f4')
